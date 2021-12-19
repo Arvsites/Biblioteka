@@ -15,7 +15,8 @@
 {% endblock%}
 
 {% block text%}
-    <h3>{{books.title}}</h3>
-    <h3>{{books.task}}</h3>
-
+    <div class="alert alert-warning mt-2">
+        <p>Автор: {{books.title}}</p>
+        <p>Название: {{books.task}}</p>
+    </div>
 {% endblock%}

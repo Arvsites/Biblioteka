@@ -8,5 +8,5 @@ class Books(models.Model):
         return self.task
 
     class Meta:
-        verbose_name = 'Задача'
-        verbose_name_plural = 'Задачи'
+        verbose_name = 'Книга'
+        verbose_name_plural = 'Книги'

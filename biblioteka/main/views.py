@@ -16,9 +16,10 @@ def search(request):
 
     if request.method == 'POST':
         b = request.POST['title']
+        print(b)
+        books = Books.objects.get(title=b)
     else:
-        b = 'Пушкин'
-    books = Books.objects.get(title=b)
+        books = Books.objects.all()
     form = BooksForm()
     #queryset = City.objects.filter(name__icontains='Boston')
     return render(request, 'main/search.html',{'title': 'Поиск книг','books': books, 'form': form})

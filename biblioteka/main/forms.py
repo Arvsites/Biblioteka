@@ -9,7 +9,7 @@ class BooksForm(ModelForm):
         widgets = {
             "title": TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Введите автора или название книги'
+                'placeholder': 'Введите автора книги'
             }),
             "task": TextInput(attrs={
                 'class': 'form-control',
