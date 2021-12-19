@@ -13,7 +13,6 @@ def readers(reqest):
     return render(reqest, 'main/readers.html')
 
 def search(request):
-
     if request.method == 'POST':
         b = request.POST['title']
         print(b)
