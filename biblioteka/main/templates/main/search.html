@@ -1,7 +1,7 @@
 {% extends 'main/base.html'%}
 
 {% block title1%}
-
+    {{title}}
 {% endblock%}
 
 {% block title2%}
@@ -10,22 +10,12 @@
         {{ form.title }}
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
     </form>
-<br><br><br>
-   <h4>Результаты поиска:</h4>
+    <br><br><br>
+    <h4>Результаты поиска:</h4>
 {% endblock%}
 
 {% block text%}
+    <h3>{{books.title}}</h3>
+    <h3>{{books.task}}</h3>
 
-<!--    {% if tasks %}-->
-        {% for el in books %}
-            <div class="alert alert-warning mt-2">
-                <h3>{{el.title}}</h3>
-                <p>{{el.task}}</p>
-            </div>
-<!--        {% endfor%}-->
-<!--    {% else %}-->
-<!--        <div class="alert alert-warning mt-2">-->
-<!--            <p>Такой книги нет. Попробуйте переформулировать запрос.</p>-->
-<!--        </div>-->
-<!--    {% endif %}-->
 {% endblock%}

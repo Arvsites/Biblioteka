@@ -12,13 +12,16 @@ def about(reqest):
 def readers(reqest):
     return render(reqest, 'main/readers.html')
 
-def search(reqest):
-    if reqest.method == 'POST':
-        form = BooksForm(reqest.POST)
-        print(form)
-    books = Books.objects.all()
+def search(request):
+
+    if request.method == 'POST':
+        b = request.POST['title']
+    else:
+        b = 'Пушкин'
+    books = Books.objects.get(title=b)
     form = BooksForm()
-    return render(reqest, 'main/search.html',{'title': 'Поиск книг','books': books, 'form': form})
+    #queryset = City.objects.filter(name__icontains='Boston')
+    return render(request, 'main/search.html',{'title': 'Поиск книг','books': books, 'form': form})
 
 def events(reqest):
     return render(reqest, 'main/events.html')
